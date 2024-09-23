@@ -3,6 +3,8 @@
 ## Objective
 The objective of this project is to demonstrate how to implement a linear classifier using PyTorch to solve a classification problem. This serves as a fundamental step before moving on to deep learning models. The goal is to evaluate the performance of a simple linear model on the dataset and understand the model's structure and functionality.
 
+In addition, this project demonstrates how to download and preprocess the **Concrete Crack** dataset, which contains images of concrete cracks, for classification. The aim is to train a model to classify images containing cracks as **positive** and those without cracks as **negative**.
+
 ## Introduction
 In this notebook, we use a **linear classifier**, one of the simplest machine learning models, to solve a classification problem. Linear classifiers attempt to separate classes using a linear decision boundary. Before using more complex models, linear classifiers are helpful as a baseline to ensure your dataset is properly structured and can be classified to some extent.
 
@@ -46,16 +48,24 @@ A linear classifier is a supervised learning model that makes predictions based 
    - After training, the model is validated on a separate dataset to evaluate its generalization performance.
    - The validation accuracy is calculated after each epoch, and the model’s performance is compared based on accuracy.
 
-## Table of Contents:
-1. **Imports and Auxiliary Functions**: Necessary library imports and helper functions.
-2. **Download Data**: Instructions for downloading and loading the dataset.
-3. **Dataset Class**: Definition of a custom dataset class in PyTorch for preprocessing.
-4. **Transform Object and Dataset Object**: Data transformation steps, such as normalization.
-5. **Training and Validation**: Model training and validation steps for 5 epochs, tracking accuracy and loss.
+## Dataset Information
+The dataset used in this project consists of images of concrete cracks. The images are labeled as either **positive** (containing cracks) or **negative** (no cracks). This dataset is crucial for training a classification model to distinguish between cracked and non-cracked concrete images.
 
-## How the Model Works:
+- **Source**: [Concrete Crack Dataset](https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DL0321EN/data/images/concrete_crack_images_for_classification.zip)
+- The dataset is structured into two folders:
+  - **Positive**: Contains images with concrete cracks.
+  - **Negative**: Contains images without cracks.
+
+The dataset is used to train the classifier, where the task is to predict whether a given image contains a crack (positive) or not (negative).
+
+### How the Dataset is Processed:
+- The images are loaded from the two folders and labeled as **1** for positive (contains cracks) and **0** for negative (no cracks).
+- Data augmentation and normalization are applied to improve the model's robustness.
+- The dataset is split into training and validation sets.
+
+## Working:
 ### 1. **Input Layer**: 
-   The input to the linear classifier consists of feature vectors from the dataset. Each input feature represents an attribute of the data point (e.g., pixel values for image data).
+   The input to the linear classifier consists of feature vectors extracted from the concrete crack images. Each input feature represents attributes of the image (e.g., pixel values).
 
 ### 2. **Linear Transformation**:
    The input features are passed through a linear transformation:
