@@ -46,7 +46,7 @@ A linear classifier is a supervised learning model that makes predictions based 
    - After training, the model is validated on a separate dataset to evaluate its generalization performance.
    - The validation accuracy is calculated after each epoch, and the model’s performance is compared based on accuracy.
 
-## Table of Contents
+## Table of Contents:
 1. **Imports and Auxiliary Functions**: Necessary library imports and helper functions.
 2. **Download Data**: Instructions for downloading and loading the dataset.
 3. **Dataset Class**: Definition of a custom dataset class in PyTorch for preprocessing.
